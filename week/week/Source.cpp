@@ -4,7 +4,6 @@
 
 int main()
 {
-	Vector3D v0( 1, 2, 3);
 
 	//Vector3D v1 = Vector3D(4, 5, 6);
 	//Vector3D v2(7,8,9);
@@ -16,12 +15,21 @@ int main()
 
 	MatrixMxN m(5, 4);
 	m.rows_[0].num_ = 5;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		for (int j = 0; j < 4; j++)
 		{
-			m.rows_[i].v_[j] = 5*i + j + 1;
+			m.rows_[j].v_[i] = 4*i + j + 1;
 		}
+	}
+	std::cout << "m \n";
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			std::cout << m.rows_[j].v_[i] << " ";
+		}
+		std::cout << "\n";
 	}
 
 	VectorND v(5);
@@ -33,7 +41,10 @@ int main()
 	
 	VectorND y(4);
 	y = m * v;
-
+	std::cout << "-----------------------------------------------\n";
+	std::cout << "v: " << v;
+	std::cout << "-----------------------------------------------\n";
+	std::cout << "result\n";
 	std::cout << y << std::endl;
 	/*
 	MatrixMxN m(5, 4);

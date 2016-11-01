@@ -28,11 +28,6 @@ public:
 		return vec;
 	}
 
-	void setValue(const int& pos, const int& value)
-	{
-		v_[pos] = value;
-	}
-
 	int operator*(const VectorND& input) {
 		int ans = 0;
 
